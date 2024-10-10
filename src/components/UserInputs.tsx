@@ -8,7 +8,7 @@ type Props = {
 
 export default function UserInputs({ onChangeInput, formData }: Props) {
   return (
-    <form className="grid grid-cols-2 gap-8 bg-gray-900 p-8 max-w-screen-sm mx-auto">
+    <form className="grid grid-cols-2 gap-8 bg-gray-900 p-8 max-w-screen-sm mx-auto my-8">
       <Input
         initialValue={formData.initialInvestment}
         id="initialInvestment"
