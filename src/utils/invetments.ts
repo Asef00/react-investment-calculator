@@ -1,9 +1,11 @@
+import { FormData } from '../types'
+
 export function calculateInvestmentResults({
   initialInvestment,
   annualInvestment,
   expectedReturn,
   duration,
-}) {
+}: FormData) {
   const annulData = []
   let investmentValue = initialInvestment
 
