@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import UserInputs from './components/UserInputs'
+import ResutlsTable from './components/ResultsTable'
 
 function App() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ function App() {
     <>
       <Header />
       <UserInputs onChangeInput={handleInputUpdate} formData={formData} />
+      <ResutlsTable data={formData} />
     </>
   )
 }
