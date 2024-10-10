@@ -13,7 +13,7 @@ function App() {
 
   function handleInputUpdate(inputValue: string, id: string) {
     setFormData((prevFormData) => {
-      return { ...prevFormData, [id]: inputValue }
+      return { ...prevFormData, [id]: +inputValue }
     })
   }
 
