@@ -20,6 +20,7 @@ export default function Input({
       <label>
         {label}
         <input
+          className="w-full rounded-sm text-black py-1 px-2"
           value={initialValue}
           id={id}
           type="number"
