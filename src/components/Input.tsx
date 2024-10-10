@@ -3,7 +3,7 @@ type Props = {
   label: string
   placeholder: string
   required?: boolean
-  onUpdate: (value: string, name: string) => void
+  onUpdate: (value: string) => void
 }
 
 export default function Input({
@@ -21,7 +21,7 @@ export default function Input({
           id={id}
           type="text"
           placeholder={placeholder}
-          onChange={(e) => onUpdate(e.target.value, id)}
+          onChange={(e) => onUpdate(e.target.value)}
           required={required}
         />
       </label>
