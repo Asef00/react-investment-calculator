@@ -21,7 +21,7 @@ export default function ResutlsTable({ data }: Props) {
         </thead>
         <tbody>
           {resultData.map((item) => (
-            <tr>
+            <tr key={item.year}>
               <td>{item.year}</td>
               <td>{item.interest}</td>
               <td>{item.valueEndOfYear}</td>
