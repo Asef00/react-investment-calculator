@@ -11,6 +11,8 @@ function App() {
     duration: 10,
   })
 
+  const dataIsValid = formData.duration > 0
+
   function handleInputUpdate(inputValue: string, id: string) {
     setFormData((prevFormData) => {
       return { ...prevFormData, [id]: +inputValue }
@@ -21,7 +23,11 @@ function App() {
     <>
       <Header />
       <UserInputs onChangeInput={handleInputUpdate} formData={formData} />
-      <ResutlsTable data={formData} />
+      {dataIsValid ? (
+        <ResutlsTable data={formData} />
+      ) : (
+        <p className="text-center">Invalid input data</p>
+      )}
     </>
   )
 }
