@@ -1,20 +1,12 @@
-import { useState } from 'react'
 import Input from './Input'
+import { FormData } from '../types'
 
-export default function UserInputs() {
-  const [formData, setFormData] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  })
+type Props = {
+  onChangeInput: (value: string, id: string) => void
+  formData: FormData
+}
 
-  function handleInputUpdate(inputValue: string, id: string) {
-    setFormData((prevFormData) => {
-      return { ...prevFormData, [id]: inputValue }
-    })
-  }
-
+export default function UserInputs({ onChangeInput, formData }: Props) {
   return (
     <form className="grid grid-cols-2 gap-8 bg-gray-900 p-8 max-w-screen-sm mx-auto">
       <Input
@@ -22,9 +14,7 @@ export default function UserInputs() {
         id="initialInvestment"
         label="Initial Investment"
         placeholder="$0"
-        onUpdate={(value: string) =>
-          handleInputUpdate(value, 'initialInvestment')
-        }
+        onUpdate={(value: string) => onChangeInput(value, 'initialInvestment')}
         required
       />
       <Input
@@ -32,9 +22,7 @@ export default function UserInputs() {
         id="annualInvestment"
         label="Initial Investment"
         placeholder="$0"
-        onUpdate={(value: string) =>
-          handleInputUpdate(value, 'annualInvestment')
-        }
+        onUpdate={(value: string) => onChangeInput(value, 'annualInvestment')}
         required
       />
       <Input
@@ -42,7 +30,7 @@ export default function UserInputs() {
         id="expectedReturn"
         label="Initial Investment"
         placeholder="$0"
-        onUpdate={(value: string) => handleInputUpdate(value, 'expectedReturn')}
+        onUpdate={(value: string) => onChangeInput(value, 'expectedReturn')}
         required
       />
       <Input
@@ -50,7 +38,7 @@ export default function UserInputs() {
         id="duration"
         label="Initial Investment"
         placeholder="$0"
-        onUpdate={(value: string) => handleInputUpdate(value, 'duration')}
+        onUpdate={(value: string) => onChangeInput(value, 'duration')}
         required
       />
     </form>
